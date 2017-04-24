@@ -11,12 +11,17 @@
 |
 */
 
-// Route::get('home', 'HomeController@index');
+
 
 
 Route::controllers([
     'auth' => 'Auth\AuthController',
+
     'password' => 'Auth\PasswordController',
+]);
+Route::controllers([
+    'staff' => 'StaffController',
+
 ]);
 
 // Authentication routes...
@@ -27,6 +32,13 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 // Registration routes...
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+Route::resource('staff', 'StaffController');
+Route::get('staff', 'StaffController@index');
+
+
+
+
 
 
 
@@ -41,29 +53,87 @@ Route::get('home', function () {
     return view('projecttem/home');
 });
 
+Route::get('rg', function () {
+    return view('staff/reservation');
+});
+
+// Route::get('payments', function () {
+//     return view('staff/payments');
+// });
+
+Route::get('home1', function () {
+    return view('projecttem/homemember');
+});
+
 Route::get('mr', function () {
     return view('projecttem/meetingRoom');
 });
 
-Route::get('R', function () {
+Route::get('room', function () {
     return view('projecttem/Room');
 });
-Route::get('RR', function () {
-    return view('projecttem/ReservationRoom');
+Route::get('restaurant', function () {
+    return view('projecttem/Restaurant');
 });
-Route::get('LM', function () {
+Route::get('roo_l', function () {
     return view('projecttem/Large_M');
 });
 
+Route::get('registerroom', function () {
+    return view('projecttem/rReservationRoom');
+});
+Route::get('contact', function(){
+    return view('projecttem/contact');
+});
 
-Route::get('/SRM','HomeController@show');
+
+
+Route::get('/a', 'StaffController@apprize');
+Route::post('newAction','StaffController@News');
+// Route::get('/test', 'StaffController@test');
+
+Route::post('contact','HomeController@Comment');
+
+
 Route::get('/RM', 'HomeController@index');
-Route::post('RM', 'HomeController@seveRM');
+
+Route::get('/app', 'HomeController@Oder');
+Route::post('/RM/{id}', 'HomeController@seveRM');
+
+Route::get('/showOdermeeting', 'HomeController@showOdermeeting');
+
+
+// Route::post('RM/{id}', 'HomeController@update');
+
+
+Route::get('payments/{id}', 'HomeController@tablebook');
+Route::post('payments/{id}', 'HomeController@Odermeeting');
+
+
 
 
 // Route::group(['middleware' => 'web'], function () {
 // Route::auth();
-    
 
-    
+//  Route::post('/RM/update/{id}', 'HomeController@update');
+
+use App\Customer;    
+use App\Roomtype_meeting;
+use App\Booking_meeting;
+Route::get('show',function(){
+
+    $user_id = Auth::user()->id;
+
+    $cus = Customer::where('user_id',$user_id)->first();
+    $a = $cus->book_meeting_id;
+       $book= Booking_meeting::where('id',$a )->first();
+       $b = $book->id_detailmeeting;
+       
+       $room = Roomtype_meeting::where('id',$b )->first();
+       
+         return view('projecttem/show')->with('cus',$cus)->with('book',$book)->with('room',$room);
+});
+
+
+
 // });

@@ -30,10 +30,21 @@ return [
 'if2'=> 'If the customers is meeting all (Day/Night time)/Bring the personal badge. There will be discount 20% for meeting rooms.',
 'if3'=> 'If the customers bring personal foods. There will be charges 20 baht per person. ',
 ////
-'AL' => 'รองรับลูกค้า 270 - 500 ท่าน',
-'ALY' => 'รองรับลูกค้า 300 - 450 ท่าน',
-'timeL' => 'โดยแบ่งราคาออกเป็น 2 ช่วงเวลา ดังนี้',
-'Dt1' => 'ภาคกลางวัน ตั้งแต่ 08.00-17.00น. ราคา 4,000 บาท',
-'Nt1' => 'ภาคกลางคืน ตั้งแต่ 17.00-22.00นใ ราคา 3,500 บาท',
+
+'BM' => 'BOOKING MEETING ROOM',
+'AL' => 'Accommodate 270 - 500 persons',
+'ALY' => 'Accommodate 300 - 450 persons',
+'timeL' => 'Separating the price 2 time periods',
+'Dt1' => 'Day time 08.00 a.m.-05.00 p.m. ราคา 4,000 Baht',
+'Nt1' => 'Nighttime 17.00 a.m.-10.00 p.m. ราคา 3,500 Baht',
+'Rg' => 'Register',
+'RR' => 'Detail',
+'Lo' => 'Login',
+'Lout' => 'Logout',
+'Please' => 'Please enter the system before booking.',
+'a' => 'IDcard',
+'P' => 'Please transfer money within 24 hours and submit the proof',
+'l' => 'LineID :: @ wpf3504y',
+
 'Book' => 'Book Now'
 ];

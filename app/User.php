@@ -34,5 +34,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 public function Detail(){
         return $this->hasOne(Customer::class);
     }
+    
+    
+    
 
 }
+

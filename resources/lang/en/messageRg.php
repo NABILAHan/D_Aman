@@ -10,7 +10,9 @@ return [
 'Time'=>'Time',
 'Daytime'=>'Daytime',
 'Nighttime'=>'Nighttime',
+'Daytime&&Nighttime'=>'DaytimeandNighttime',
 //room
+'Room'=>'Room',
 'Rimlay'=>'Rimlay',
 'Leelayai'=>'Leelayai',
 'Pradoo'=>'Pradoo',
@@ -29,7 +31,14 @@ return [
 'State'=> 'state',
 'City'=> 'City',
 'Zipcode'=> 'Zipcode',
+
 ////
-'CONTINUE' => 'CONTINUE',
+'Grand' => 'Grand Total',
+'back' => 'Back To Home',
+'b' => '฿',
+'t' =>'This room is already booked. Please check again!',
+'D' => 'Date',
+
+'CONTINUE' => 'CONTINUE'
 
 ];

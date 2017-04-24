@@ -42,6 +42,7 @@ class Authenticate {
 			{
 				return redirect()->guest('auth/login');
 			}
+			
 		}
 
 		return $next($request);
